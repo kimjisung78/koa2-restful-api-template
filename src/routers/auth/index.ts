@@ -1,9 +1,8 @@
 import Router from 'koa-router'
+import { UserController } from '../../controllers/UserController';
 
 const auth = new Router();
-auth.get('/', (ctx, _) => {
-   ctx.throw(400, { message: "NICE", isDelete: true })
-})
+auth.get('/', UserController.getUserListByName)
 
 export default auth;
 
